@@ -17,7 +17,7 @@
 
 
                 <span class="login100-form-logo">
-                    <i class="zmdi zmdi-landscape"></i>
+                    <img src="<?php echo img_url("f-plus-f-logo.png") ?>" alt="f-plus-f-logo" class="main-logo">
                 </span>
 
                 <span class="login100-form-title p-b-34 p-t-27">
@@ -52,11 +52,11 @@
 
                 </div>
 
-                <div class="text-center p-t-90">
+                <!-- <div class="text-center p-t-90">
                     <a class="txt1" onclick="toggle_register()" id="login-form-hider">
                         <?php echo lang("register") ?>
                     </a>
-                </div>
+                </div> -->
 
             </form>
         </div>
