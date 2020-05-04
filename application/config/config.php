@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://guamanpj.eu/project-elena';
+$config['base_url'] = 'https://guamanpj.eu/elena/index.php/';
 
 /*
 |--------------------------------------------------------------------------
