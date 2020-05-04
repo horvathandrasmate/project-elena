@@ -1,0 +1,57 @@
+div.article {
+    margin-top: 20px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 50px;
+
+}
+h1.title     {
+    margin: auto;
+    margin-bottom: 65px;
+    margin-top: 20px;
+}
+.folders {
+
+}
+.line-image{
+}
+/* Original image */
+.overlay-image .image {
+    display: block;
+    position: relative;
+    width: 80%;
+    height: auto;
+    border-color: white;
+}
+
+/* Original text overlay */
+.overlay-image .text {
+    color: #fff;
+    font-size: 3vw;
+    line-height: 1.5em;
+    text-shadow: 2px 2px 2px #000;
+    position: absolute;
+    margin-left: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    vertical-align: text-bottom;
+}
+.overlay-image .hover {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
+/* New overlay appearance on hover */
+.overlay-image:hover .hover {
+    opacity: 1;
+}
+.card {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border: none;
+}
