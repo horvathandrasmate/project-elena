@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /**
  * Created by PhpStorm.
@@ -12,7 +12,7 @@ if (!defined('BASEPATH')) exit('Direct access allowed');
 class Account extends CI_Controller
 {
     public function __construct()
-    {
+    { 
         parent::__construct();
         $this->load->model("Account_model");
         $this->load->model("Permissions_model");

@@ -17,7 +17,7 @@
                         style="max-height: 48px; margin-right: 16px; margin-top: 8px; cursor: pointer;"
                         class="logo-long" id="logo-long" />
                 </div>
-            </div>
+            </div> 
         </div>
 
         <div class="body-content">
