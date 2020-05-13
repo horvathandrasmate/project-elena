@@ -32,5 +32,8 @@ $lang["insert"] = "Beillesztés";
 $lang["done"] = "Kész";
 $lang["cancel"] = "Mégse";
 $lang["insert_row"] = "Sor Beillesztése";
+//Andras 13.05.2020
+$lang["successful_upload"] = "A feltöltés sikeres volt!";
+$lang["table_not_found"] = "A tábla nem található.";
 
 

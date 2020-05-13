@@ -17,7 +17,8 @@ class Account extends CI_Controller
         $this->load->model("Account_model");
         $this->load->model("Permissions_model");
     }
-    function manage(){
+    function manage()
+    {
         $this->load->view("templates/header");
         $this->load->view("account/manage");
         $this->load->view("templates/footer");
@@ -45,7 +46,6 @@ class Account extends CI_Controller
             try {
                 $this->Permissions_model->change_ugroup_for_user($ugroup, $user);
             } catch (Exception $e) {
-
             }
         }
         $data = $this->Account_model->get_profile($this->session->userdata("username"));
@@ -68,29 +68,7 @@ class Account extends CI_Controller
         }
 
 
-        if (NULL !== $this->input->post('register')) {
-            $nice_user_name = $this->input->post("nice_user_name");
-            $username = $this->input->post("username");
-            $password = $this->input->post("password");
-            $repeat_password = $this->input->post("repeat_password");
-            $email = $this->input->post("email");
-
-            if ($password != $repeat_password) {
-                $this->load->view("templates/header");
-                alert_swal_error(lang("passwords_dont_match"));
-            }
-            try {
-                $this->Account_model->register($username, $nice_user_name, $password, $email);
-            } catch (Exception $e) {
-
-                if ($e->getMessage() == "not_valid_username") alert_swal_error(lang("invalid_username"), "account/login");
-                if ($e->getMessage() == "not_valid_nice_user_name") alert_swal_error(lang("invalid_nice_user_name"), "account/login");
-                if ($e->getMessage() == "not_valid_email") alert_swal_error(lang("invalid_email"), "account/login");
-                if ($e->getMessage() == "username_match") alert_swal_error(lang("username_match"), "account/login");
-                if ($e->getMessage() == "email_match") alert_swal_error(lang("email_match"), "account/login");
-            }
-            alert_swal_success(lang("successful_registration"), "account/login");
-        } elseif (NULL !== $this->input->post('login')) {
+        if (NULL !== $this->input->post('login')) {
 
             $username = $this->input->post("username");
             $password = $this->input->post("password");
@@ -115,5 +93,27 @@ class Account extends CI_Controller
     {
         $this->Account_model->logout();
         redirect(base_url("account/login"));
+    }
+    function helpthedev()
+    {
+        if (NULL !== $this->input->post('post')) {
+            if (strlen($this->input->post("username")) < 64)
+                $username = $this->input->post("username");
+            if (strlen($this->input->post("title")) < 64)
+                $title = $this->input->post("title");
+            if (strlen($this->input->post("description")) < 64)
+                $description = $this->input->post("description");
+            $upload_array = array("username" => $username, "title" => $title, "description" => $description);
+            try {
+                $this->load->model("Database_model");
+                $this->Database_model->upload_row($this->config->item("table_prefix") . "tips", $upload_array);
+            } catch (Exception $e) {
+                if ($e->getMessage() == "table_not_found") alert_swal_error(lang("table_not_found"), "account/helpthedev");
+            }
+            alert_swal_success(lang("successful_upload"), "account/helpthedev");
+        }
+        $this->load->view("templates/header");
+        $this->load->view("account/helpthedev");
+        $this->load->view("templates/footer");
     }
 }

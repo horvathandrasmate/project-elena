@@ -32,3 +32,6 @@ $lang["insert"] = "Insert";
 $lang["done"] = "Done";
 $lang["cancel"] = "Cancel";
 $lang["insert_row"] = "Insert Row";
+//Andras 13.05.2020
+$lang["successful_upload"] = "Upload was successful!";
+$lang["table_not_found"] = "Table not found";

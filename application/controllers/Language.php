@@ -30,7 +30,7 @@ class Language extends CI_Controller
         $this->session->set_userdata('site_lang', $language);
         redirect(base_url("account/profile"));
     }
-    function backup_data()
+    function backup()
     {
         foreach ($this->config->item("language_array") as $key => $value) {
             $this->lang->load($value, $value);
